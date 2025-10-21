@@ -4,7 +4,7 @@ export default function DirectorScreen({ navigation }) {
   return (
     <View style={styles.c}>
       <Text style={styles.t}>Panel Director</Text>
-      <Text>Crear jefes y conductores, costes/km, suscripciones, bloqueos…</Text>
+      <Text>Crear jefes/conductores, costes/km, pagos, bloqueos…</Text>
       <Button title="Cerrar sesión" onPress={()=>navigation.replace('Login')} />
     </View>
   );

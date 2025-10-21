@@ -4,7 +4,7 @@ export default function ConductorScreen({ navigation }) {
   return (
     <View style={styles.c}>
       <Text style={styles.t}>Panel Conductor</Text>
-      <Text>Ver cierres del día, mes y contabilizar carreras.</Text>
+      <Text>Ver cierres día/mes y contabilizar carreras.</Text>
       <Button title="Cerrar sesión" onPress={()=>navigation.replace('Login')} />
     </View>
   );

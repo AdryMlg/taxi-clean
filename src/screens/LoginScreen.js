@@ -25,7 +25,7 @@ export default function LoginScreen({ navigation }) {
         <Picker.Item label="Conductor" value="Conductor" />
       </Picker>
       <Button title="Entrar" onPress={onLogin} />
-      <Text style={{marginTop:12,opacity:0.6}}>Usuario: Adry · Contraseña: 123456</Text>
+      <Text style={{marginTop:10,opacity:0.6}}>Usuario: Adry · Contraseña: 123456</Text>
     </View>
   );
 }

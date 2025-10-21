@@ -4,7 +4,7 @@ export default function JefeScreen({ navigation }) {
   return (
     <View style={styles.c}>
       <Text style={styles.t}>Panel Jefe</Text>
-      <Text>Conductores asignados, geolocalización y cierres diario/mensual.</Text>
+      <Text>Conductores asignados, geolocalización, cierres.</Text>
       <Button title="Cerrar sesión" onPress={()=>navigation.replace('Login')} />
     </View>
   );
