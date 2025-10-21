@@ -1,13 +1,12 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-
 export default function JefeScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Panel Jefe</Text>
-      <Text>Ver conductores asignados y sus cierres.</Text>
-      <Button title="Cerrar sesión" onPress={() => navigation.replace('Login')} />
+    <View style={styles.c}>
+      <Text style={styles.t}>Panel Jefe</Text>
+      <Text>Conductores asignados, geolocalización y cierres diario/mensual.</Text>
+      <Button title="Cerrar sesión" onPress={()=>navigation.replace('Login')} />
     </View>
   );
 }
-const styles = StyleSheet.create({ container:{flex:1,justifyContent:'center',alignItems:'center'}, title:{fontSize:24,fontWeight:'bold',marginBottom:10} });
+const styles = StyleSheet.create({ c:{flex:1,justifyContent:'center',alignItems:'center',padding:20}, t:{fontSize:22,fontWeight:'bold',marginBottom:10} });
