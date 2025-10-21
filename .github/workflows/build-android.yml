@@ -11,20 +11,36 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+
       - name: Install deps
         run: npm ci || npm i
+
       - name: Prebuild Android
         run: npx expo prebuild -p android --non-interactive
+
       - name: Setup JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
+
       - name: Build APK (debug)
         working-directory: android
         run: ./gradlew :app:assembleDebug
-      - name: Upload APK
+
+      - name: List APK outputs (debug info)
+        run: |
+          echo "Listing APK outputs..."
+          ls -R android/app/build/outputs/apk || true
+          echo "Find any .apk"
+          find android/app/build/outputs -name "*.apk" -type f -printf "%p %k KB\n" || true
+
+      # 👉 Subir TODOS los APK que existan (cualquier ruta y nombre)
+      - name: Upload APK(s)
         uses: actions/upload-artifact@v4
         with:
-          name: taxi-app-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          name: taxi-apks
+          path: |
+            android/app/build/outputs/apk/**/*.apk
+            android/app/build/outputs/**/*.apk
+          if-no-files-found: error
